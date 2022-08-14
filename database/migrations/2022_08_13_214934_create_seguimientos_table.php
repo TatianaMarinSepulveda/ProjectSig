@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('areas', function (Blueprint $table) {
+        Schema::create('seguimientos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombreArea');
-            $table->string('responsableArea');
+            $table->foreignId('Documento_id')->constrained();
+            $table->foreignId('Usuario_id')->constrained();
+            $table->string('EstadoSeguimiento');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('areas');
+        Schema::dropIfExists('seguimientos');
     }
 };

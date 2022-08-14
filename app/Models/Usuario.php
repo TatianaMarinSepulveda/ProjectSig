@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Area extends Model
+class Usuario extends Model
 {
     use HasFactory;
-
-    public function Usuario(){
-        return $this->hasOne(Usuario::class);
-    }
 }
